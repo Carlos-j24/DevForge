@@ -1,0 +1,53 @@
+{
+  "editor.formatOnSave": true,
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  "editor.wordWrap": "on",
+
+  "editor.minimap.enabled": true,
+
+  "editor.guides.bracketPairs": true,
+
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "explorer.confirmDelete": false,
+
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[markdown]": {
+    "editor.wordWrap": "on"
+  },
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  }
+}
