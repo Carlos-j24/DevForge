@@ -3,7 +3,7 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 
 ## Estado actual
 - v0.1.0-alpha. DevForge Doctor 0.1.0 funcionando (consola y `-Json`, salida 0/1/2).
-- DevForge Init (spec 002) implementado y validado en carpetas temporales; 77 tests en verde (pwsh + 5.1).
+- DevForge Init (spec 002) terminado (T1-T9): en `main` (PR #3) y usado en MedAlert (rama `chore/arnes-ia` de ese repo). 77 tests en verde (pwsh + 5.1).
 - Arnés de IA creado: AGENTS.md, CLAUDE.md, constitución, spec 001-doctor, skill sdd, tests Pester.
 - CI: GitHub Actions corre Pester (pwsh + 5.1) en cada PR. Trabajo en ramas + PR; `gh` instalado y autenticado.
 - Fuente de verdad: carpeta `DevForge-001-Doctor` (remoto `Carlos-j24/DevForge`). La carpeta `DevForge` es una copia antigua.
@@ -21,8 +21,9 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 - `setup-devforge.ps1` duplica la lógica de `Test-Tool`; Doctor es la versión buena.
 - Si un test pasa a la primera, se comprueba metiendo un fallo a propósito (en la spec 002 se hizo en T2 y T7).
 - En tests, `Should -BeNullOrEmpty` sobre una lista de varios `$null` falla: comprobar elemento a elemento.
+- Usar init primero con `-WhatIf`: en MedAlert destapó un `package.json` sobrante en la raíz. Idea para la Fase C: que Doctor avise de esos restos.
 
 ## Próximos pasos
 - Resolver dudas abiertas de `specs/001-doctor/spec.md` (alias de Python en Store, versiones mínimas).
-- Fase B: falta T9, el primer uso real de Init en MedAlert (primero `-WhatIf`, revisión de Carlos, luego en real). Necesito la ruta de MedAlert.
+- Fase B terminada. MedAlert está en `C:\Users\USUARIO\Desktop\MedAlert` (`appmedalert` es una versión antigua).
 - Fase C: Doctor diagnostica el arnés de un proyecto (AGENTS.md, MEMORY.md, tests, secretos).

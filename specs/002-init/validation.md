@@ -1,6 +1,6 @@
 # Validación 002 — DevForge Init
 
-VEREDICTO: APROBADO (falta T9: primer uso real en MedAlert, que no bloquea la validación del código)
+VEREDICTO: APROBADO · CI en verde en el PR #3 (pwsh y 5.1) · T9 hecha en MedAlert
 
 Fecha: 2026-10-03 · Tests: `tests/Init.Tests.ps1`, 62/62 en verde en pwsh 7.6.6 y en Windows PowerShell 5.1 (77/77 contando los de Doctor).
 
@@ -35,6 +35,11 @@ Fecha: 2026-10-03 · Tests: `tests/Init.Tests.ps1`, 62/62 en verde en pwsh 7.6.6
 
 ## Casos límite de la spec
 Todos cubiertos por tests: proyecto vacío, Django + Vue en subcarpetas, `package.json` inválido, varios `package.json`, solo CLAUDE.md, carpetas ignoradas, ruta con espacios y tildes, Django oculta Python, Vue oculta Node.js y script `test` por defecto de npm.
+
+## Primer uso real: MedAlert (T9, 2026-10-03)
+- `-WhatIf` detectó Node.js en la raíz por un `package.json` sobrante (restos de un `npm install` en la carpeta equivocada). Init funcionó según la spec y además destapó un problema real del proyecto. Se limpió MedAlert (24 tests de Vue siguen en verde) y no se cambió la spec.
+- Ejecución real: 3 archivos creados, Django (`backend`) y Vue (`frontend`) detectados con sus comandos de tests, 5 marcadores; exit 0.
+- Los marcadores se completaron leyendo el código de MedAlert. Se encontró un posible fallo de zona horaria en `enviar_recordatorios_whatsapp`, que quedó apuntado en el MEMORY.md de MedAlert.
 
 ## Observaciones (no bloquean)
 - Con `-WhatIf`, PowerShell añade sus propios mensajes "What If: …" además del resumen de init.

@@ -1,6 +1,6 @@
 # Spec 002 — DevForge Init
 
-Estado: implementada (2026-10-03) · pendiente: primer uso real en MedAlert (T9)
+Estado: implementada (2026-10-03) · primer uso real en MedAlert hecho (T9)
 
 ## Contexto y objetivo
 Preparar un proyecto para trabajar con agentes de IA (Claude Code, OpenCode) hoy exige crear a mano el mismo arnés en cada repo: reglas del proyecto, memoria entre sesiones y el puente para Claude. En DevForge ese arnés ya existe y funciona. `devforge init` lo instala en cualquier otro proyecto en segundos, adaptado a lo que encuentre en él y sin tocar nada de lo que el proyecto ya tenga. El primer cliente real será MedAlert (Django + Vue).
