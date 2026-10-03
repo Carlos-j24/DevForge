@@ -33,3 +33,4 @@ Ecosistema personal de desarrollo en PowerShell (scripts, IA, plantillas). Prime
 
 ## Verificación
 - `Invoke-Pester ./tests` en verde + ejecutar Doctor una vez en consola y otra con `-Json`.
+- El CI (`.github/workflows/tests.yml`) corre Pester en pwsh y 5.1 en cada PR: no fusionar con el CI en rojo.
