@@ -6,6 +6,23 @@ Este proyecto sigue el estándar **Keep a Changelog** y utiliza **Semantic Versi
 
 ---
 
+# [Unreleased]
+
+### Agregado
+
+- DevForge Doctor 0.1.0 (DEVFORGE-001): modelo estándar `ToolCheck`; detección de Git, PowerShell, VS Code, Python, Node.js, Docker y Ollama; estados `OK`, `WARNING` y `ERROR`; estado global; reporte JSON con `-Json`; códigos de salida `0` OK, `1` WARNING, `2` ERROR.
+- Arnés de IA: `AGENTS.md`, `CLAUDE.md`, `MEMORY.md`, `docs/constitution.md`, `specs/001-doctor/spec.md` y skill `sdd`.
+- Tests Pester (5.5+) para Doctor (`tests/Doctor.Tests.ps1`).
+
+### Corregido
+
+- ROADMAP: marcadas como completadas las tareas ya hechas de la v0.1.0-alpha.
+- Las carpetas de `ai/`, `docs/`, `knowledge/`, `templates/`, `workspace/` y `.github/` eran archivos vacíos; ahora son carpetas con `.gitkeep`.
+- Acentos rotos en Windows PowerShell 5.1: los `.ps1` con caracteres no ASCII se guardan en UTF-8 con BOM.
+- Skill `sdd` movida a su ubicación definitiva, `.claude/skills/sdd/`.
+
+---
+
 # [0.1.0-alpha] - 2026-07-11
 
 ## 🎉 Primera versión pública

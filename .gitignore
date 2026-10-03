@@ -92,3 +92,5 @@ release/
 *.bak
 *.tmp
 *.swp
+# Claude Code (configuración local, no compartir)
+.claude/settings.local.json

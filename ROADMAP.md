@@ -45,13 +45,16 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 - [x] README profesional
 - [x] ROADMAP
 - [x] Script inicial (`setup-devforge.ps1`)
+- [x] DEVFORGE_MANIFESTO.md
+- [x] CHANGELOG.md
+- [x] .gitignore
+- [x] Configuración inicial de VS Code
+- [x] DEVFORGE-001 — DevForge Doctor
+- [x] Arnés de IA: AGENTS.md, MEMORY.md, constitución, spec 001 y tests Pester
 
 ### Pendiente
 
-- [ ] DEVFORGE_MANIFESTO.md
-- [ ] CHANGELOG.md
-- [ ] .gitignore
-- [ ] Configuración inicial de VS Code
+- [ ] Corregir la estructura de carpetas (`ai/`, `docs/`, `knowledge/`, `templates/`, `workspace/`, `.github/`)
 - [ ] Primer Release
 
 ---
@@ -156,6 +159,8 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 - [ ] Revisor de Código
 - [ ] Documentador
 - [ ] Tester
+
+> Diseño previsto: sistema multiagente SDD (coordinador → planificador → implementador → revisor) con permisos limitados por agente.
 
 ---
 
