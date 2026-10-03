@@ -4,6 +4,7 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 ## Estado actual
 - v0.1.0-alpha. DevForge Doctor 0.1.0 funcionando (consola y `-Json`, salida 0/1/2).
 - Arnés de IA creado: AGENTS.md, CLAUDE.md, constitución, spec 001-doctor, skill sdd, tests Pester.
+- CI: GitHub Actions corre Pester (pwsh + 5.1) en cada PR. Trabajo en ramas + PR; `gh` instalado y autenticado.
 - Fuente de verdad: carpeta `DevForge-001-Doctor` (remoto `Carlos-j24/DevForge`). La carpeta `DevForge` es una copia antigua.
 
 ## Decisiones (y por qué)

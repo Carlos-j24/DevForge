@@ -1,0 +1,36 @@
+# Puerta de tests (constitución, principio 4): Pester en cada PR y en cada push a main.
+# Se prueba en PowerShell 7 y en Windows PowerShell 5.1 porque Doctor debe funcionar
+# en ambos (en 5.1 aparecieron fallos de codificación que en pwsh no se ven).
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pester:
+    name: Pester (${{ matrix.shell }})
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shell: [pwsh, powershell]
+    defaults:
+      run:
+        shell: ${{ matrix.shell }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Instalar Pester 5.5+
+        run: |
+          Install-Module Pester -MinimumVersion 5.5 -Force -SkipPublisherCheck -Scope CurrentUser
+          Get-Module -ListAvailable Pester | Select-Object Name, Version
+
+      - name: Ejecutar tests
+        run: |
+          Import-Module Pester -MinimumVersion 5.5
+          Invoke-Pester ./tests -Output Detailed -CI

@@ -94,3 +94,6 @@ release/
 *.swp
 # Claude Code (configuración local, no compartir)
 .claude/settings.local.json
+
+# Pester (Invoke-Pester -CI)
+testResults.xml

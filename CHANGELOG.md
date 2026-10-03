@@ -13,6 +13,7 @@ Este proyecto sigue el estándar **Keep a Changelog** y utiliza **Semantic Versi
 - DevForge Doctor 0.1.0 (DEVFORGE-001): modelo estándar `ToolCheck`; detección de Git, PowerShell, VS Code, Python, Node.js, Docker y Ollama; estados `OK`, `WARNING` y `ERROR`; estado global; reporte JSON con `-Json`; códigos de salida `0` OK, `1` WARNING, `2` ERROR.
 - Arnés de IA: `AGENTS.md`, `CLAUDE.md`, `MEMORY.md`, `docs/constitution.md`, `specs/001-doctor/spec.md` y skill `sdd`.
 - Tests Pester (5.5+) para Doctor (`tests/Doctor.Tests.ps1`).
+- CI con GitHub Actions (`.github/workflows/tests.yml`): Pester en cada PR y push a `main`, en PowerShell 7 y 5.1.
 
 ### Corregido
 
