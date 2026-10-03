@@ -3,6 +3,7 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 
 ## Estado actual
 - v0.1.0-alpha. DevForge Doctor 0.1.0 funcionando (consola y `-Json`, salida 0/1/2).
+- DevForge Init (spec 002) implementado y validado en carpetas temporales; 77 tests en verde (pwsh + 5.1).
 - Arnés de IA creado: AGENTS.md, CLAUDE.md, constitución, spec 001-doctor, skill sdd, tests Pester.
 - CI: GitHub Actions corre Pester (pwsh + 5.1) en cada PR. Trabajo en ramas + PR; `gh` instalado y autenticado.
 - Fuente de verdad: carpeta `DevForge-001-Doctor` (remoto `Carlos-j24/DevForge`). La carpeta `DevForge` es una copia antigua.
@@ -18,8 +19,10 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 - Los `.ps1` con acentos deben guardarse en UTF-8 **con BOM**: Windows PowerShell 5.1 lee los que no tienen BOM como ANSI y muestra "estÃ¡".
 - `pwsh` 7.6.6 instalado el 2026-10-03; los tests pasan tanto en pwsh como en 5.1.
 - `setup-devforge.ps1` duplica la lógica de `Test-Tool`; Doctor es la versión buena.
+- Si un test pasa a la primera, se comprueba metiendo un fallo a propósito (en la spec 002 se hizo en T2 y T7).
+- En tests, `Should -BeNullOrEmpty` sobre una lista de varios `$null` falla: comprobar elemento a elemento.
 
 ## Próximos pasos
 - Resolver dudas abiertas de `specs/001-doctor/spec.md` (alias de Python en Store, versiones mínimas).
-- Fase B: DEVFORGE-002 `devforge init` (instalar este mismo arnés en otros proyectos, empezando por MedAlert).
+- Fase B: falta T9, el primer uso real de Init en MedAlert (primero `-WhatIf`, revisión de Carlos, luego en real). Necesito la ruta de MedAlert.
 - Fase C: Doctor diagnostica el arnés de un proyecto (AGENTS.md, MEMORY.md, tests, secretos).

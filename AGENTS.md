@@ -1,13 +1,15 @@
 # AGENTS.md — DevForge
-Ecosistema personal de desarrollo en PowerShell (scripts, IA, plantillas). Primer módulo funcional: DevForge Doctor (DEVFORGE-001), que diagnostica el entorno sin instalar nada.
+Ecosistema personal de desarrollo en PowerShell (scripts, IA, plantillas). Módulos: DevForge Doctor (DEVFORGE-001), que diagnostica el entorno sin instalar nada, y DevForge Init (DEVFORGE-002), que instala el arnés de IA en otros proyectos.
 
 ## Stack y estructura
 - PowerShell 7+ (`pwsh`) en Windows. Sin dependencias externas en runtime.
 - `scripts/core/` modelo `ToolCheck` y salida por consola · `scripts/doctor/` orquestador y checks.
+- `scripts/init/` detección de stack, contenido y escritura del arnés · `templates/harness/` plantillas AGENTS/CLAUDE/MEMORY.
 - `specs/NNN-nombre/` specs SDD · `docs/constitution.md` principios · `tests/` Pester 5.5+.
 
 ## Comandos
 - Doctor: `pwsh -File scripts/doctor/Invoke-DevForgeDoctor.ps1` (añade `-Json` para JSON).
+- Init: `pwsh -File scripts/init/Invoke-DevForgeInit.ps1 -Path <proyecto>` (`-WhatIf` para simular, `-Force` para sobrescribir).
 - Tests: `pwsh -c "Invoke-Pester ./tests -Output Detailed"` (requiere Pester 5.5 o superior).
 
 ## Convenciones
@@ -20,6 +22,7 @@ Ecosistema personal de desarrollo en PowerShell (scripts, IA, plantillas). Prime
 - Códigos de salida: 0 OK, 1 WARNING, 2 ERROR. Son contrato público: no cambiarlos.
 - En Windows `python` puede ser el alias de Microsoft Store: existir en PATH no garantiza Python real.
 - Para crear carpetas usa `New-Item -ItemType Directory`; sin eso se crean archivos vacíos.
+- Init nunca pisa archivos existentes sin `-Force` y solo escribe AGENTS.md, CLAUDE.md y MEMORY.md.
 
 ## Forma de trabajar
 - Lee `docs/constitution.md`, `MEMORY.md` y la spec activa antes de tocar código.
