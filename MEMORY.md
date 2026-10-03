@@ -1,0 +1,24 @@
+# MEMORY.md — DevForge
+Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo que ya no aporte.
+
+## Estado actual
+- v0.1.0-alpha. DevForge Doctor 0.1.0 funcionando (consola y `-Json`, salida 0/1/2).
+- Arnés de IA creado: AGENTS.md, CLAUDE.md, constitución, spec 001-doctor, skill sdd, tests Pester.
+- Fuente de verdad: carpeta `DevForge-001-Doctor` (remoto `Carlos-j24/DevForge`). La carpeta `DevForge` es una copia antigua.
+
+## Decisiones (y por qué)
+- AGENTS.md es la fuente única; CLAUDE.md solo lo importa → mismas reglas para Claude Code y OpenCode.
+- Skills en `.claude/skills/` → Claude Code y OpenCode las leen de ahí (una sola copia).
+- SDD en modo spec-anchored: la spec 001 se escribió después del código y se mantiene viva.
+- Tests con Pester 5.5+ (probado con 6.2): sintaxis de Pester 5, que la 6 sigue soportando. Windows trae la 3.4, así que hay que instalarlo, y por separado para 5.1 y para pwsh (cada uno tiene su carpeta de módulos).
+
+## Aprendizajes y errores a evitar
+- Las carpetas `ai/*`, `docs/*`, `knowledge/*`, `templates/*`, `workspace/*` y `.github/*` eran archivos vacíos (faltó `-ItemType Directory`). Corregido el 2026-10-03: ahora son carpetas con `.gitkeep`.
+- Los `.ps1` con acentos deben guardarse en UTF-8 **con BOM**: Windows PowerShell 5.1 lee los que no tienen BOM como ANSI y muestra "estÃ¡".
+- `pwsh` 7.6.6 instalado el 2026-10-03; los tests pasan tanto en pwsh como en 5.1.
+- `setup-devforge.ps1` duplica la lógica de `Test-Tool`; Doctor es la versión buena.
+
+## Próximos pasos
+- Resolver dudas abiertas de `specs/001-doctor/spec.md` (alias de Python en Store, versiones mínimas).
+- Fase B: DEVFORGE-002 `devforge init` (instalar este mismo arnés en otros proyectos, empezando por MedAlert).
+- Fase C: Doctor diagnostica el arnés de un proyecto (AGENTS.md, MEMORY.md, tests, secretos).
