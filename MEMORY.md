@@ -26,5 +26,5 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 
 ## Próximos pasos
 - Resolver dudas abiertas de `specs/001-doctor/spec.md` (alias de Python en Store, versiones mínimas).
-- Fase B terminada. MedAlert está en `C:\Users\USUARIO\Desktop\MedAlert` (`appmedalert` es una versión antigua).
-- Fase C (spec 003) terminada en la rama `spec/003-harness-doctor`. Ideas para specs futuras: secretos expuestos, tests y CI, restos como el `package.json` de MedAlert, e ignorar marcadores escritos entre comillas de código (hoy una mención literal cuenta como pendiente).
+- MedAlert está en `C:\Users\USUARIO\Desktop\MedAlert` (`appmedalert` es una versión antigua).
+- Fases A, B y C terminadas (2026-10-03): arnés + CI, DevForge Init (spec 002) y Doctor `-Project` (spec 003), todo en `main`. Ideas para specs futuras: secretos expuestos, tests y CI, restos como el `package.json` de MedAlert, e ignorar marcadores escritos entre comillas de código (hoy una mención literal cuenta como pendiente).
