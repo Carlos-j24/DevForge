@@ -1,6 +1,7 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
-    [switch]$Json
+    [switch]$Json,
+    [string]$Project
 )
 
 $scriptRoot = Split-Path -Parent $PSScriptRoot
@@ -10,6 +11,7 @@ $corePath = Join-Path $scriptRoot "core"
 . (Join-Path $corePath "Write-DevForgeMessage.ps1")
 . (Join-Path $PSScriptRoot "Test-Tool.ps1")
 . (Join-Path $PSScriptRoot "Test-System.ps1")
+. (Join-Path $PSScriptRoot "Test-Harness.ps1")
 
 $checks = @()
 $checks += Test-DevForgeSystem
@@ -21,6 +23,13 @@ $checks += Test-DevForgeTool -Id "node" -Name "Node.js" -Category "LANGUAGE" -Co
 $checks += Test-DevForgeTool -Id "docker" -Name "Docker" -Category "CONTAINER" -Command "docker" -Required $false
 $checks += Test-DevForgeTool -Id "ollama" -Name "Ollama" -Category "AI" -Command "ollama" -Required $false
 
+# Arnés de IA de un proyecto (spec 003): solo si se pide con -Project.
+if ($Project) {
+    $projectPath = $PSCmdlet.GetUnresolvedProviderPathFromPSPath($Project)
+    $projectName = Split-Path -Leaf $projectPath
+    $checks += Test-DevForgeHarness -Path $projectPath
+}
+
 $globalStatus = Get-DevForgeGlobalStatus -Checks $checks
 $ok = @($checks | Where-Object Status -eq "OK").Count
 $warnings = @($checks | Where-Object Status -eq "WARNING").Count
@@ -29,7 +38,7 @@ $errors = @($checks | Where-Object Status -eq "ERROR").Count
 if ($Json) {
     [PSCustomObject]@{
         tool = "DevForge Doctor"
-        version = "0.1.0"
+        version = "0.2.0"
         timestamp = (Get-Date).ToUniversalTime().ToString("o")
         status = $globalStatus
         summary = [PSCustomObject]@{ ok=$ok; warnings=$warnings; errors=$errors }
@@ -46,12 +55,13 @@ Write-Host "          DEVFORGE DOCTOR" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
-foreach ($category in @("CORE","EDITOR","LANGUAGE","CONTAINER","AI")) {
+foreach ($category in @("CORE","EDITOR","LANGUAGE","CONTAINER","AI","HARNESS")) {
     $categoryChecks = @($checks | Where-Object Category -eq $category)
     if ($categoryChecks.Count -eq 0) { continue }
 
     $title = switch ($category) {
         "LANGUAGE" { "LANGUAGES" }
+        "HARNESS"  { "HARNESS ($projectName)" }
         default { $category }
     }
 
