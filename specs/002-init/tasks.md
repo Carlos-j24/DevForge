@@ -41,12 +41,12 @@ Regla: una tarea cada vez. Primero el test en `tests/Init.Tests.ps1` (en rojo), 
     - Una segunda ejecución sin `-Force` no cambia ni contenido ni fechas.
     - Antes y después solo cambian los tres archivos del arnés.
     - Funciona con una ruta con espacios y tildes.
-- [ ] **T8. Validación manual y documentación.** Criterios de finalización
+- [x] **T8. Validación manual y documentación.** Criterios de finalización
   - Hecho cuando:
     - Init se ejecutó a mano en carpetas temporales (proyecto vacío, arnés parcial y Django + Vue en `backend/` y `frontend/`) con pwsh y con 5.1, y se revisó la salida.
     - El CI está en verde.
     - Están actualizados el AGENTS.md de DevForge (comando de init), CHANGELOG.md y MEMORY.md, y la validación RF por RF tiene el veredicto.
-- [ ] **T9. Primer uso real en MedAlert.** Criterios de finalización
+- [x] **T9. Primer uso real en MedAlert.** Criterios de finalización
   - Hecho cuando:
     - Se ejecutó primero con `-WhatIf` y Carlos revisó la salida.
     - Después se ejecutó en real y Carlos revisó el AGENTS.md generado.
