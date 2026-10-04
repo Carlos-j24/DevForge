@@ -38,6 +38,8 @@ Antes de trabajar en un proyecto, el desarrollador necesita saber si su máquina
 - El comando de versión escribe en stderr → se captura igual (`2>&1`).
 - Se ejecuta desde Windows PowerShell 5.1 → el check de PowerShell mira si existe `pwsh`, no la versión de la sesión actual.
 
+> Nota (2026-10-03): la spec 003 añade `-Project <ruta>` (categoría `HARNESS`) y sube Doctor a 0.2.0. Sin `-Project`, todo lo de esta spec sigue igual.
+
 ## Fuera de alcance
 - Validar versiones mínimas, diagnosticar el proyecto actual, reportes HTML, modo `--fix` (ver "Próxima evolución" en DEVFORGE-001-DOCTOR.md).
 

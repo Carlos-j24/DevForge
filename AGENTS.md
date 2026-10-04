@@ -8,7 +8,7 @@ Ecosistema personal de desarrollo en PowerShell (scripts, IA, plantillas). Módu
 - `specs/NNN-nombre/` specs SDD · `docs/constitution.md` principios · `tests/` Pester 5.5+.
 
 ## Comandos
-- Doctor: `pwsh -File scripts/doctor/Invoke-DevForgeDoctor.ps1` (añade `-Json` para JSON).
+- Doctor: `pwsh -File scripts/doctor/Invoke-DevForgeDoctor.ps1` (`-Json` para JSON; `-Project <ruta>` revisa el arnés de un proyecto).
 - Init: `pwsh -File scripts/init/Invoke-DevForgeInit.ps1 -Path <proyecto>` (`-WhatIf` para simular, `-Force` para sobrescribir).
 - Tests: `pwsh -c "Invoke-Pester ./tests -Output Detailed"` (requiere Pester 5.5 o superior).
 
