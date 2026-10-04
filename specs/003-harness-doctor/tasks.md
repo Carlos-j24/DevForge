@@ -33,7 +33,7 @@ Regla: una tarea cada vez. Primero el test en `tests/Harness.Tests.ps1` (en rojo
     - En consola aparece la sección "HARNESS (nombre)".
     - Funciona con una ruta con espacios y tildes.
     - Los 15 tests de Doctor siguen en verde sin cambios.
-- [ ] **T6. Validación manual y documentación.** Criterios de finalización
+- [x] **T6. Validación manual y documentación.** Criterios de finalización
   - Hecho cuando:
     - Doctor `-Project` se ejecutó a mano sobre DevForge y sobre MedAlert, en consola y con `-Json`, con pwsh y con 5.1.
     - AGENTS.md (comando), CHANGELOG.md, MEMORY.md y la spec 001 (nota sobre `-Project`) están actualizados.

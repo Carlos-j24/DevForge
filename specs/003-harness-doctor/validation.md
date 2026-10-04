@@ -1,6 +1,6 @@
 # Validación 003 — Doctor revisa el arnés de un proyecto
 
-VEREDICTO: APROBADO
+VEREDICTO: APROBADO · CI en verde en el PR #5 (pwsh y 5.1)
 
 Fecha: 2026-10-03 · Tests: `tests/Harness.Tests.ps1`, 38/38 en verde en pwsh 7.6.6 y en Windows PowerShell 5.1 (115/115 en total).
 
