@@ -8,6 +8,12 @@ Este proyecto sigue el estándar **Keep a Changelog** y utiliza **Semantic Versi
 
 # [Unreleased]
 
+---
+
+# [0.2.0] - 2026-10-05
+
+## 🤖 Arnés de IA
+
 ### Agregado
 
 - DevForge Doctor 0.1.0 (DEVFORGE-001): modelo estándar `ToolCheck`; detección de Git, PowerShell, VS Code, Python, Node.js, Docker y Ollama; estados `OK`, `WARNING` y `ERROR`; estado global; reporte JSON con `-Json`; códigos de salida `0` OK, `1` WARNING, `2` ERROR.
@@ -23,6 +29,12 @@ Este proyecto sigue el estándar **Keep a Changelog** y utiliza **Semantic Versi
 - Las carpetas de `ai/`, `docs/`, `knowledge/`, `templates/`, `workspace/` y `.github/` eran archivos vacíos; ahora son carpetas con `.gitkeep`.
 - Acentos rotos en Windows PowerShell 5.1: los `.ps1` con caracteres no ASCII se guardan en UTF-8 con BOM.
 - Skill `sdd` movida a su ubicación definitiva, `.claude/skills/sdd/`.
+
+### Cambiado
+
+- `scripts/setup-devforge.ps1` ya no duplica la lógica de Doctor: es un atajo que lo ejecuta con los mismos parámetros.
+- ROADMAP reordenado: la v0.2.0 pasa a ser "Arnés de IA" (lo construido) y las versiones siguientes se corren un número.
+- README: versión, módulos disponibles y estructura del proyecto al día.
 
 ---
 
@@ -50,24 +62,4 @@ Este proyecto sigue el estándar **Keep a Changelog** y utiliza **Semantic Versi
 
 ## Próximas versiones
 
-### v0.2.0
-
-- Workspace profesional.
-- Continue.
-- Cline.
-- Ollama.
-- Extensiones VS Code.
-
----
-
-### v0.3.0
-
-- Templates.
-- Automatización.
-- CLI DevForge.
-
----
-
-### v1.0.0
-
-Primera versión estable.
+Ver [ROADMAP.md](ROADMAP.md).

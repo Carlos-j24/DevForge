@@ -2,11 +2,11 @@
 Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo que ya no aporte.
 
 ## Estado actual
-- v0.1.0-alpha. DevForge Doctor 0.1.0 funcionando (consola y `-Json`, salida 0/1/2).
-- DevForge Init (spec 002) terminado y usado en MedAlert. Doctor 0.2.0 (spec 003): `-Project <ruta>` revisa el arnés de un proyecto. 115 tests en verde (pwsh + 5.1).
+- v0.2.0 "Arnés de IA" (2026-10-05): Doctor 0.2.0 (consola, `-Json`, `-Project <ruta>`) e Init (spec 002, usado en MedAlert). 116 tests en verde (pwsh + 5.1).
+- Versiones siguientes en ROADMAP.md (reordenado en la v0.2.0): la próxima es la v0.3.0, Professional Workspace.
 - Arnés de IA creado: AGENTS.md, CLAUDE.md, constitución, spec 001-doctor, skill sdd, tests Pester.
 - CI: GitHub Actions corre Pester (pwsh + 5.1) en cada PR. Trabajo en ramas + PR; `gh` instalado y autenticado.
-- Fuente de verdad: carpeta `DevForge-001-Doctor` (remoto `Carlos-j24/DevForge`). La carpeta `DevForge` es una copia antigua.
+- Fuente de verdad: carpeta `DevForge-001-Doctor` (remoto `Carlos-j24/DevForge`). La carpeta `DevForge` es una copia antigua (revisada el 2026-10-05: no tiene nada que no esté en GitHub; se puede borrar).
 
 ## Decisiones (y por qué)
 - AGENTS.md es la fuente única; CLAUDE.md solo lo importa → mismas reglas para Claude Code y OpenCode.
@@ -18,7 +18,7 @@ Memoria del proyecto entre sesiones. Máximo ~50 líneas: resume o elimina lo qu
 - Las carpetas `ai/*`, `docs/*`, `knowledge/*`, `templates/*`, `workspace/*` y `.github/*` eran archivos vacíos (faltó `-ItemType Directory`). Corregido el 2026-10-03: ahora son carpetas con `.gitkeep`.
 - Los `.ps1` con acentos deben guardarse en UTF-8 **con BOM**: Windows PowerShell 5.1 lee los que no tienen BOM como ANSI y muestra "estÃ¡".
 - `pwsh` 7.6.6 instalado el 2026-10-03; los tests pasan tanto en pwsh como en 5.1.
-- `setup-devforge.ps1` duplica la lógica de `Test-Tool`; Doctor es la versión buena.
+- `setup-devforge.ps1` es solo un atajo a Doctor desde la v0.2.0: no volver a meter lógica ahí.
 - Si un test pasa a la primera, se comprueba metiendo un fallo a propósito (en la spec 002 se hizo en T2 y T7).
 - En tests, `Should -BeNullOrEmpty` sobre una lista de varios `$null` falla: comprobar elemento a elemento.
 - Usar init primero con `-WhatIf`: en MedAlert destapó un `package.json` sobrante en la raíz.

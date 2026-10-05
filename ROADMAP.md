@@ -27,7 +27,9 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 
 | Versión | Estado |
 |---------|---------|
-| v0.1.0-alpha | 🚧 En desarrollo |
+| v0.1.0-alpha | ✅ Completada — Fundación |
+| v0.2.0 | ✅ Completada — Arnés de IA |
+| v0.3.0 | 🔜 Siguiente — Professional Workspace |
 
 ---
 
@@ -52,14 +54,27 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 - [x] DEVFORGE-001 — DevForge Doctor
 - [x] Arnés de IA: AGENTS.md, MEMORY.md, constitución, spec 001 y tests Pester
 
-### Pendiente
+- [x] Corregir la estructura de carpetas (`ai/`, `docs/`, `knowledge/`, `templates/`, `workspace/`, `.github/`)
 
-- [ ] Corregir la estructura de carpetas (`ai/`, `docs/`, `knowledge/`, `templates/`, `workspace/`, `.github/`)
-- [ ] Primer Release
+> El primer release publicado en GitHub es la v0.2.0.
 
 ---
 
-## 🚀 Versión 0.2.0 — Professional Workspace
+## 🤖 Versión 0.2.0 — Arnés de IA
+
+**Objetivo:** Que los agentes de IA trabajen con reglas, memoria y tests en cualquier proyecto.
+
+### Completado
+
+- [x] Arnés de IA en DevForge: AGENTS.md, CLAUDE.md, MEMORY.md, constitución y skill `sdd`
+- [x] Flujo SDD: spec → plan → tareas → validación
+- [x] Tests Pester y CI con GitHub Actions (PowerShell 7 y 5.1)
+- [x] DEVFORGE-002 — DevForge Init: instala el arnés en cualquier proyecto (primer uso: MedAlert)
+- [x] Doctor 0.2.0: `-Project` revisa el arnés de un proyecto
+
+---
+
+## 🚀 Versión 0.3.0 — Professional Workspace
 
 **Objetivo:** Preparar el entorno profesional.
 
@@ -75,7 +90,7 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 
 ---
 
-## 🚀 Versión 0.3.0 — Knowledge Base
+## 🚀 Versión 0.4.0 — Knowledge Base
 
 **Objetivo:** Crear el segundo cerebro del desarrollador.
 
@@ -90,7 +105,7 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 
 ---
 
-## 🚀 Versión 0.4.0 — Templates
+## 🚀 Versión 0.5.0 — Templates
 
 **Objetivo:** No volver a empezar un proyecto desde cero.
 
@@ -104,7 +119,7 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 
 ---
 
-## 🚀 Versión 0.5.0 — Automatización
+## 🚀 Versión 0.6.0 — Automatización
 
 **Objetivo:** Automatizar tareas repetitivas.
 
@@ -119,7 +134,7 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 
 ---
 
-## 🚀 Versión 0.6.0 — Calidad
+## 🚀 Versión 0.7.0 — Calidad
 
 **Objetivo:** Garantizar estándares profesionales.
 
@@ -134,7 +149,7 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 
 ---
 
-## 🚀 Versión 0.7.0 — DevOps
+## 🚀 Versión 0.8.0 — DevOps
 
 **Objetivo:** Integrar herramientas modernas de despliegue.
 
@@ -142,13 +157,13 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 
 - [ ] Docker
 - [ ] Docker Compose
-- [ ] GitHub Actions
+- [x] GitHub Actions (tests en cada PR desde la v0.2.0)
 - [ ] CI/CD
 - [ ] Deploy automatizado
 
 ---
 
-## 🚀 Versión 0.8.0 — Inteligencia Artificial
+## 🚀 Versión 0.9.0 — Inteligencia Artificial
 
 **Objetivo:** Integrar múltiples asistentes especializados.
 
@@ -160,11 +175,13 @@ Nuestro objetivo es reducir el tiempo dedicado a tareas repetitivas y permitir q
 - [ ] Documentador
 - [ ] Tester
 
+> Base ya construida en la v0.2.0: arnés (AGENTS.md, MEMORY.md), skills y flujo SDD.
+>
 > Diseño previsto: sistema multiagente SDD (coordinador → planificador → implementador → revisor) con permisos limitados por agente.
 
 ---
 
-## 🚀 Versión 0.9.0 — Dashboard
+## 🚀 Versión 0.10.0 — Dashboard
 
 **Objetivo:** Crear una interfaz visual para DevForge.
 
@@ -226,7 +243,7 @@ DevForge seguirá siempre estos principios:
 ```text
 ██████░░░░░░░░░░░░░░░░░░░░ 20%
 
-Fundación del proyecto en progreso...
+Fundación y arnés de IA completados. Siguiente: Professional Workspace (v0.3.0).
 ```
 
 ---
@@ -237,4 +254,4 @@ Fundación del proyecto en progreso...
 
 *"Forge your ideas. Build your future."*
 
-**Versión actual:** `v0.1.0-alpha`
+**Versión actual:** `v0.2.0`
